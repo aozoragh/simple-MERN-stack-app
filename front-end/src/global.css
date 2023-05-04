@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-jost: Jost;
+
+  /* font sizes */
+  --font-size-lg: 18px;
+  --font-size-18xl-3: 37.3px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkslategray: #3a3a3a;
+  --color-whitesmoke: #f8f8f8;
+  --color-gainsboro: #e6e6e6;
+  --color-black: #000;
+  --color-yellow: #cdda00;
+
+  /* Gaps */
+  --gap-371xl: 390px;
+  --gap-29xl: 48px;
+
+  /* Paddings */
+  --padding-16xl: 35px;
+  --padding-3xs: 10px;
+  --padding-18xl: 37px;
+  --padding-110xl-7: 129.7px;
+  --padding-6xs: 7px;
+
+  /* border radiuses */
+  --br-5xs: 8px;
+  --br-10xs: 3px;
+}
