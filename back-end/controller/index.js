@@ -16,4 +16,11 @@ const getAllData = async (req, res) => {
   res.json(resData);
 };
 
-module.exports = { getAllData };
+const getChildrenData = async (req, res) => {
+  console.log(req.params.id);
+  const resData = child.data.filter(item => item.id === req.params.id);
+  console.log(resData);
+  res.json(resData);
+}
+
+module.exports = { getAllData, getChildrenData };
