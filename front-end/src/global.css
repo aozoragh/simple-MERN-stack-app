@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap");
 body {
   margin: 0;
+  padding: 200px 700px;
   line-height: normal;
 }
 :root {
@@ -33,4 +34,10 @@ body {
   /* border radiuses */
   --br-5xs: 8px;
   --br-10xs: 3px;
+}
+
+
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }

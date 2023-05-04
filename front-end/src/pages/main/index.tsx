@@ -25,6 +25,7 @@ export const MainPage: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       const tblData = await getAllData();
+
       setTblData(tblData);
       setSortedData(tblData);
     };
@@ -32,25 +33,20 @@ export const MainPage: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (tblData.length) addEventToTd();
-  }, [tblData]);
-
-  const addEventToTd = () => {
-    const tableBodyEle = document
-      .getElementsByClassName("my-table")[0]
-      .getElementsByTagName("tbody")[0]
-      .getElementsByTagName("tr");
-    console.log(4444, tableBodyEle[1]);
-
-    for (let i = 0; i < pageSizeNum; i++) {
-      tableBodyEle[i]
-        .getElementsByTagName("td")[4]
-        .addEventListener("click", (e) => {
-          console.log(123123, e);
-          navigate("/children", { state: { id: i } });
-        });
+    let table: any = document.getElementsByClassName("my-table")[0];
+    if (table) {
+      for (var i = 0; i < table.rows.length; i++) {
+        table.rows[i].onclick = function () {
+          tableText(this);
+        };
+      }
     }
-  };
+
+    function tableText(tableRow: any) {
+      var id = tableRow.childNodes[0].innerHTML;
+      navigate("/children", { state: { id: id } });
+    }
+  }, [tblData]);
 
   return (
     <div>
@@ -64,6 +60,7 @@ export const MainPage: React.FC = () => {
         }}
         sortKey="upper-electives"
         sortDir={-1}
+        id="my-table"
         className="my-table"
         paginationClass="my-pagination"
         mobilePageSize={2}

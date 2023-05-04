@@ -17,9 +17,9 @@ const getAllData = async (req, res) => {
 };
 
 const getChildrenData = async (req, res) => {
-  console.log(req.params.id);
-  const resData = child.data.filter(item => item.id === req.params.id);
-  console.log(resData);
+  const resData = child.data.filter((item) => {
+    return item.id == req.params.id
+  });
   res.json(resData);
 }
 

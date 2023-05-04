@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getChildrenData } from "../action";
 import { useLocation } from "react-router-dom";
-import { ChildProps } from "../type";
+import { ChildrenProps } from "../type";
 
 const Children: React.FC = () => {
   const location = useLocation();
-  const [tblData, setTblData] = useState<Array<ChildProps>>([]);
+  const [tblData, setTblData] = useState<Array<ChildrenProps>>([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -29,9 +29,9 @@ const Children: React.FC = () => {
         </thead>
         <tbody>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{tblData[0]?.id}</td>
+            <td>{tblData[0]?.parentId}</td>
+            <td>{tblData[0]?.paidAmount}</td>
           </tr>
         </tbody>
       </table>
